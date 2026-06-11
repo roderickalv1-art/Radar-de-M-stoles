@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>El Radar de Móstoles</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #222">
+      <a-assets>
+        <a-asset-item id="museo" src="museo.glb"></a-asset-item>
+       
+      </a-assets>
+
+      <!-- Museo correctamente escalado y ubicado -->
+      <a-entity gltf-model="#museo" scale="100 100 100" position="0 0 0"></a-entity>
+
+      <!-- Cámara dentro del museo -->
+      <a-entity position="0 0.15 0">
+        <a-camera wasd-controls look-controls>
+          <a-cursor></a-cursor>
+        </a-camera>
+      </a-entity>
+
+
+      <!-- Luz ambiente -->
+      <a-entity light="type: ambient; intensity: 0.7"></a-entity>
+      <a-entity light="type: directional; intensity: 0.5" position="1 4 1"></a-entity>
+    </a-scene>
+  </body>
+</html>
